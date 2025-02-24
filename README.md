@@ -82,12 +82,68 @@ An interactive dashboard for managing and tracking interview preparation progres
 - [ ] Loading state animations
 - [x] Interactive element hover effects
 
+### Backend Development
+
+#### API Setup
+
+- [ ] Express server configuration
+- [ ] Database connection setup
+- [ ] Middleware configuration (cors, authentication)
+- [ ] Error handling middleware
+
+#### Authentication Endpoints
+
+- [ ] POST /api/auth/register
+- [ ] POST /api/auth/login
+- [ ] GET /api/auth/verify
+
+#### Topic Management
+
+- [ ] GET /api/topics
+- [ ] POST /api/topics
+- [ ] GET /api/topics/:id
+- [ ] PUT /api/topics/:id
+- [ ] DELETE /api/topics/:id
+
+#### Progress Tracking
+
+- [ ] POST /api/progress/update
+- [ ] GET /api/progress/stats
+- [ ] GET /api/progress/streak
+
+#### Review System
+
+- [ ] GET /api/reviews/due
+- [ ] POST /api/reviews/complete
+- [ ] GET /api/reviews/schedule
+
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v18 or higher)
 - npm or yarn
+- Docker Desktop
+
+### Database Setup
+
+```bash
+# Navigate to the database directory
+cd interview-prep-db
+
+# Start the PostgreSQL container
+docker-compose up -d
+
+# Verify the container is running
+docker ps
+
+# Database connection details:
+# Host: localhost
+# Port: 5432
+# Database: interview_prep
+# Username: admin
+# Password: admin123
+```
 
 ### Installation
 
@@ -103,4 +159,32 @@ npm install
 
 # Start development server
 npm run dev
+```
+
+### Database Management
+
+```bash
+# View database logs
+docker logs interview_prep_db
+
+# Stop the database
+docker-compose stop
+
+# Start the database
+docker-compose start
+
+# Remove the database container and volumes
+docker-compose down -v
+```
+
+### Connecting to Database
+
+You can connect to the database using any PostgreSQL client with these credentials:
+
+```plaintext
+Host: localhost
+Port: 5432
+Database: interview_prep
+Username: admin
+Password: admin123
 ```
